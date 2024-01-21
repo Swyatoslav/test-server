@@ -8,6 +8,8 @@ async function CheckCardNumber() {
         document.getElementById(field).style.color = 'black';
         document.getElementById(field).textContent = "WAIT FOR RESPONSE";
     })
+    document.getElementById("error").style.visibility = "hidden";
+    document.getElementById("error").textContent = "";
 
     // отправляем запрос
     const response = await fetch("/get-info", {
@@ -44,5 +46,9 @@ async function CheckCardNumber() {
             document.getElementById(field).style.color = 'red';
             document.getElementById(field).textContent = "ERROR";
         })
-    console.log(response);
+        const error_data = await response.json()
+        document.getElementById("error").style.color = 'red';
+        document.getElementById("error").style.visibility = "visible";
+        document.getElementById("error").textContent = error_data.detail;
+        console.log(response);
 }
