@@ -7,10 +7,6 @@ from fastapi.staticfiles import StaticFiles
 
 app = FastAPI()
 
-# @app.get("/")
-# def root():
-#     return FileResponse("/index.html")
-
 with open('binlist-data.csv', 'r') as file:
     bin_db = {info['bin']: info for info in csv.DictReader(file)}
 
