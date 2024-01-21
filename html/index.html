@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bank card checker</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js"></script>
+</head>
+<body>
+<h3 align="center">Enter your bank card number</h3>
+<div class="container">
+    <label for="card_number">Card number</label>
+    <input
+            type="text"
+            id="card_number"
+            name="card_number"
+            placeholder="Введите номер карты"
+    >
+    <input
+            type="submit"
+            name="Submit"
+            id="btn_id"
+            value="Check"
+            onclick='CheckCardNumber();'
+    >
+    <div id="error"></div>
+</div>
+<div class="container">
+    <h3 align="center">Card Info</h3>
+    <table class="table">
+        <tbody>
+        <tr>
+            <td>BIN</td>
+            <td id="bin"></td>
+        </tr>
+        <tr>
+            <td>Brand</td>
+            <td id="brand"></td>
+        </tr>
+        <tr>
+            <td>Type</td>
+            <td id="type"></td>
+        </tr>
+        <tr>
+            <td>Category</td>
+            <td id="category"></td>
+        </tr>
+        <tr>
+            <td>Issuer</td>
+            <td id="issuer"></td>
+        </tr>
+        <tr>
+            <td>Alpha 2</td>
+            <td id="alpha_2"></td>
+        </tr>
+        <tr>
+            <td>Alpha 3</td>
+            <td id="alpha_3"></td>
+        </tr>
+        <tr>
+            <td>Country</td>
+            <td id="country"></td>
+        </tr>
+        <tr>
+            <td>Latitude</td>
+            <td id="latitude"></td>
+        </tr>
+        <tr>
+            <td>Longitude</td>
+            <td id="longitude"></td>
+        </tr>
+        <tr>
+            <td>Bank phone</td>
+            <td id="bank_phone"></td>
+        </tr>
+        <tr>
+            <td>Bank URL</td>
+            <td id="bank_url"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
