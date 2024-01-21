@@ -7,23 +7,33 @@
     <script src="scripts.js"></script>
 </head>
 <body>
-<h3 align="center">Enter your bank card number</h3>
+<h3 align="center" id="title">Check bank card</h3>
 <div class="container">
-    <label for="card_number">Card number</label>
     <input
             type="text"
             id="card_number"
             name="card_number"
-            placeholder="Введите номер карты"
+            placeholder="Enter card number"
+            maxlength="16"
+            onsubmit='CheckCardNumber();'
     >
     <input
             type="submit"
             name="Submit"
             id="btn_id"
-            value="Check"
+            value="Apply"
             onclick='CheckCardNumber();'
     >
     <div id="error"></div>
+    <script>
+        (function () {
+            document.querySelector('input').addEventListener('keydown', function (e) {
+                if (e.keyCode === 13) {
+                    CheckCardNumber();
+                }
+            });
+        })();
+    </script>
 </div>
 <div class="container">
     <h3 align="center">Card Info</h3>
