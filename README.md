@@ -31,3 +31,5 @@ Then execute next command in your terminal:
     docker run -it -p 8000:80 swatswatov/test-server:latest  
 
 Site should be available on **http://localhost:8000/**
+
+This way is necessary to launch automated tests of another project
