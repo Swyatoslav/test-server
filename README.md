@@ -1,8 +1,8 @@
-# Card verifier
+# BIN verifier
 
 ## Description
 
-This service checks information of bank card by BIN number. If there is no information<br> for requested card
+This service checks information of bank by BIN number. If there is no information<br> for requested BIN
 or request was invalid, user will see an error on UI.
 
 
