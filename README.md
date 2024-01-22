@@ -7,7 +7,9 @@ or request was invalid, user will see an error on UI.
 
 
 ## Launch
-To launch this app locally you should has python 3.1x version.
+
+### 1st way (using uvicorn)
+You should have python 3.1x version.
 
 Then you should install the requirements using command
 
@@ -19,12 +21,12 @@ After that execute next command in command line
 
 Site should be available on **http://127.0.0.1:8000/**
 
-
-OR you can download the prepared docker image using command
+### 2nd way (using docker)
+You should pull the prepared docker image using command
 
     docker pull swatswatov/test-server:latest
 
-And then execute next command in your terminal:
+Then execute next command in your terminal:
 
     docker run -it -p 8000:80 swatswatov/test-server:latest  
 
