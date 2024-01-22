@@ -1,23 +1,30 @@
 # Card verifier
 
+## Description
+
+This service checks information of bank card by BIN number. If there is no information<br> for requested card
+or request was invalid, user will see an error on UI.
+
+
 To locally run this app you should has python 3.1x version.
 
 Than you should install the requirements using command
 
-pip3 install -r requirements.txt
+    pip3 install -r requirements.txt
 
-Then execute next command in command line
+After that execute next command in command line
 
-uvicorn main:app --host 127.0.0.1
+    uvicorn main:app --host 127.0.0.1
 
 Site should be available on http://127.0.0.1:8000/ 
 
 
 You can also download the prepared docker image using command
-docker pull swatswatov/test-server:latest
 
-and then execute next command in your terminal:
+    docker pull swatswatov/test-server:latest
 
-docker run -it -p 8000:80 test-server    
+And then execute next command in your terminal:
 
-Site should be available on http://localhost:8000/ 
+    docker run -it -p 8000:80 swatswatov/test-server:latest  
+
+Site should be available on **http://localhost:8000/**

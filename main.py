@@ -11,6 +11,11 @@ with open('binlist-data.csv', 'r') as file:
     bin_db = {info['bin']: info for info in csv.DictReader(file)}
 
 
+@app.get("/ping")
+async def ping():
+    return 'pong'
+
+
 @app.post("/get-info")
 async def get_info(data=Body()):
     raw_card_number = data["card_number"]
@@ -30,7 +35,7 @@ async def get_info(data=Body()):
     sleep(3)
     if card_number not in bin_db.keys():
         raise HTTPException(status_code=404, detail="Unknown card")
-    return {"data": json.dumps(bin_db[card_number])}
+    return {"data": bin_db[card_number]}
 
 
 app.mount("/", StaticFiles(directory="html", html=True))
