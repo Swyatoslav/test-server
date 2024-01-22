@@ -33,11 +33,11 @@ async def get_info(data=Body()):
     except ValueError:
         raise HTTPException(status_code=400, detail="BIN number should contain only digits")
 
-    if len(bin_number) < 5:
-        raise HTTPException(status_code=400, detail="BIN number's length can't be less than 5")
+    if len(bin_number) < 6:
+        raise HTTPException(status_code=400, detail="BIN number's length can't be less than 6")
 
-    if len(bin_number) > 16:
-        raise HTTPException(status_code=400, detail="BIN number's length can't be greater than 16")
+    if len(bin_number) > 8:
+        raise HTTPException(status_code=400, detail="BIN number's length can't be greater than 8")
 
     sleep(3)
     if bin_number not in bin_db.keys():
