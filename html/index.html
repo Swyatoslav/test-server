@@ -2,41 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Bank card checker</title>
+    <title>BIN checker</title>
     <link rel="stylesheet" href="styles.css">
     <script src="scripts.js"></script>
 </head>
 <body>
-<h1 align="center" id="page_title">Check bank card</h1>
+<h1 align="center" id="page_title">Check BIN</h1>
 <div class="container">
     <input
             type="text"
-            id="card_number"
-            name="card_number"
-            placeholder="Enter card number"
+            id="bin_number"
+            name="bin_number"
+            placeholder="Enter BIN number"
             maxlength="16"
-            onsubmit='CheckCardNumber();'
+            onsubmit='CheckBinNumber();'
     >
     <input
             type="submit"
             name="Submit"
             id="btn_id"
             value="Apply"
-            onclick='CheckCardNumber();'
+            onclick='CheckBinNumber();'
     >
     <div id="error"></div>
     <script>
         (function () {
             document.querySelector('input').addEventListener('keydown', function (e) {
                 if (e.keyCode === 13) {
-                    CheckCardNumber();
+                    CheckBinNumber();
                 }
             });
         })();
     </script>
 </div>
 <div class="container">
-    <h2 align="center" id="card_info_title">Card Info</h2>
+    <h2 align="center" id="bin_info_title">BIN Info</h2>
     <table class="table">
         <tbody>
         <tr id="row_bin">

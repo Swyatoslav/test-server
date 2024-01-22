@@ -1,7 +1,7 @@
-async function CheckCardNumber() {
+async function CheckBinNumber() {
 
     // получаем введеный в поле номер банковской карты
-    const card_number = document.getElementById("card_number").value;
+    const bin_number = document.getElementById("bin_number").value;
 
     const info_fields = ['bin', 'brand', 'type', 'category', 'issuer', 'alpha_2', 'alpha_3', 'country', 'latitude', 'longitude', 'bank_phone', 'bank_url']
     info_fields.forEach((field) => {
@@ -16,16 +16,16 @@ async function CheckCardNumber() {
         method: "POST",
         headers: {"Accept": "application/json", "Content-Type": "application/json"},
         body: JSON.stringify({
-            card_number: card_number,
+            bin_number: bin_number,
         })
     });
 
     if (response.ok) {
         const raw_data = await response.json();
-        const card_info = raw_data.data;
-        for (const key in card_info) {
-            if (card_info[key]) {
-                document.getElementById(key).textContent = card_info[key];
+        const bin_info = raw_data.data;
+        for (const key in bin_info) {
+            if (bin_info[key]) {
+                document.getElementById(key).textContent = bin_info[key];
             } else {
                 document.getElementById(key).textContent = `NOT FOUND`;
                 document.getElementById(key).style.color = `red`;
