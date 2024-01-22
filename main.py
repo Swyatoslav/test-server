@@ -18,6 +18,10 @@ async def ping():
 
 @app.post("/get-info")
 async def get_info(data=Body()):
+    if not data:
+        raise HTTPException(status_code=400, detail="Empty request body")
+    if not data.get('card_number'):
+        raise HTTPException(status_code=400, detail="No 'card_number' field in request")
     raw_card_number = data["card_number"]
     if not raw_card_number:
         raise HTTPException(status_code=400, detail="Card number can't be empty")
@@ -28,6 +32,9 @@ async def get_info(data=Body()):
         float(card_number)
     except ValueError:
         raise HTTPException(status_code=400, detail="Card number should contain only digits")
+
+    if len(card_number) < 5:
+        raise HTTPException(status_code=400, detail="Card number's length can't be less than 5")
 
     if len(card_number) > 16:
         raise HTTPException(status_code=400, detail="Card number's length can't be greater than 16")
